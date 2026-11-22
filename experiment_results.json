@@ -1,0 +1,115 @@
+{
+  "random_seed": 42,
+  "split": "stratified 80/20, test_size=0.2",
+  "selection_criterion": "mean 5-fold stratified CV ROC-AUC on train only",
+  "experiments": [
+    {
+      "model": "LogisticRegression (baseline)",
+      "cv_roc_auc_train": 0.7821,
+      "test_roc_auc": 0.843,
+      "accuracy": 0.785,
+      "precision": 0.8299,
+      "recall": 0.8714,
+      "f1": 0.8502,
+      "seconds": 0.1
+    },
+    {
+      "model": "RandomForest default",
+      "cv_roc_auc_train": 0.7849,
+      "test_roc_auc": 0.8127,
+      "accuracy": 0.785,
+      "precision": 0.7939,
+      "recall": 0.9357,
+      "f1": 0.859,
+      "seconds": 3.0
+    },
+    {
+      "model": "RandomForest depth=8, leaf=3",
+      "cv_roc_auc_train": 0.7858,
+      "test_roc_auc": 0.8332,
+      "accuracy": 0.785,
+      "precision": 0.7836,
+      "recall": 0.9571,
+      "f1": 0.8617,
+      "seconds": 4.1
+    },
+    {
+      "model": "ExtraTrees depth=10, leaf=3",
+      "cv_roc_auc_train": 0.78,
+      "test_roc_auc": 0.8213,
+      "accuracy": 0.78,
+      "precision": 0.7697,
+      "recall": 0.9786,
+      "f1": 0.8616,
+      "seconds": 3.3
+    },
+    {
+      "model": "AdaBoost 200, lr=0.05",
+      "cv_roc_auc_train": 0.7336,
+      "test_roc_auc": 0.7939,
+      "accuracy": 0.705,
+      "precision": 0.7056,
+      "recall": 0.9929,
+      "f1": 0.8249,
+      "seconds": 2.3
+    },
+    {
+      "model": "GradientBoosting d=2, lr=0.05",
+      "cv_roc_auc_train": 0.7792,
+      "test_roc_auc": 0.8367,
+      "accuracy": 0.78,
+      "precision": 0.8038,
+      "recall": 0.9071,
+      "f1": 0.8523,
+      "seconds": 1.3
+    },
+    {
+      "model": "GradientBoosting d=3, lr=0.1",
+      "cv_roc_auc_train": 0.7661,
+      "test_roc_auc": 0.8073,
+      "accuracy": 0.78,
+      "precision": 0.8,
+      "recall": 0.9143,
+      "f1": 0.8533,
+      "seconds": 1.3
+    },
+    {
+      "model": "HistGradientBoosting",
+      "cv_roc_auc_train": 0.7735,
+      "test_roc_auc": 0.8154,
+      "accuracy": 0.765,
+      "precision": 0.7925,
+      "recall": 0.9,
+      "f1": 0.8428,
+      "seconds": 0.6
+    },
+    {
+      "model": "MLP (32,16), alpha=1e-2",
+      "cv_roc_auc_train": 0.7487,
+      "test_roc_auc": 0.7785,
+      "accuracy": 0.74,
+      "precision": 0.7619,
+      "recall": 0.9143,
+      "f1": 0.8312,
+      "seconds": 0.4
+    },
+    {
+      "model": "Soft Voting RF+GB+LR",
+      "cv_roc_auc_train": 0.7917,
+      "test_roc_auc": 0.8444,
+      "accuracy": 0.8,
+      "precision": 0.8165,
+      "recall": 0.9214,
+      "f1": 0.8658,
+      "seconds": 5.0
+    }
+  ],
+  "selected_model": "Soft Voting: RandomForest + GradientBoosting + LogisticRegression",
+  "final_metrics": {
+    "roc_auc": 0.8444047619047619,
+    "accuracy": 0.8,
+    "precision": 0.8164556962025317,
+    "recall": 0.9214285714285714,
+    "f1": 0.8657718120805369
+  }
+}
